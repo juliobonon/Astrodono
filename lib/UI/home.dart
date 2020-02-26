@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_astronomy/UI/passwordReset.dart';
+import 'package:easy_astronomy/UI/Register.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -14,8 +15,8 @@ class LoginPage extends StatelessWidget {
             color: Colors.amber[100],
             child: ListView(children: <Widget>[
               SizedBox(
-                width: 240,
-                height: 240,
+                width: 180,
+                height: 180,
                 child: Image(
                   image: AssetImage('imgs/yeet.png'),
                 ),
@@ -80,17 +81,17 @@ class LoginPage extends StatelessWidget {
                       child: Row(
                         children: <Widget>[
                           IconButton(
-                            iconSize: 20,
+                            iconSize: 30,
                             icon: Image.asset('imgs/facebook.png'),
                             onPressed: () {},
                           ),
                           IconButton(
-                            iconSize: 20,
+                            iconSize: 30,
                             icon: Image.asset('imgs/twitter.png'),
                             onPressed: () {},
                           ),
                           IconButton(
-                            iconSize: 20,
+                            iconSize: 30,
                             icon: Image.asset('imgs/google-plus.png'),
                             onPressed: () {},
                           ),
@@ -121,6 +122,44 @@ class LoginPage extends StatelessWidget {
                       ),
                     )
                   ],
+                ),
+              ),
+              SizedBox(height: 20),
+              SizedBox(
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10)
+                    )
+                  ),
+                  
+                  child: FlatButton(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          child:  Text("Register!",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        ),
+                        Container(
+                          width: 30,
+                          child: Image.asset('imgs/moon2.png'),
+                        )
+                       
+                        
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterPage()
+                        ));
+                    },
+                  ),
                 ),
               )
             ])));

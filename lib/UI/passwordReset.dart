@@ -19,7 +19,7 @@ class _RecoveryPasswordPageState extends State<RecoveryPasswordPage> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Colors.blue[900], Colors.blue[900]]
+            colors: [Colors.blue[900], Colors.blue[700]]
           )
         ),
         child: ListView(
