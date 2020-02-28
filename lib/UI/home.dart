@@ -71,27 +71,27 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
-                      decoration: BoxDecoration(color: Colors.black,
+                      decoration: BoxDecoration(color: Colors.white54,
                       borderRadius: BorderRadius.all(
                         Radius.circular(10)
                       )
                       ),
-                      width: 150,
+                      width: 170,
                       height: 60,
                       child: Row(
                         children: <Widget>[
                           IconButton(
-                            iconSize: 30,
+                            iconSize: 35,
                             icon: Image.asset('imgs/facebook.png'),
                             onPressed: () {},
                           ),
                           IconButton(
-                            iconSize: 30,
+                            iconSize: 35,
                             icon: Image.asset('imgs/twitter.png'),
                             onPressed: () {},
                           ),
                           IconButton(
-                            iconSize: 30,
+                            iconSize: 35,
                             icon: Image.asset('imgs/google-plus.png'),
                             onPressed: () {},
                           ),
@@ -99,10 +99,10 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 150,
+                      width: 100,
                       height: 60,
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Colors.white54,
                         borderRadius: BorderRadius.all(
                           Radius.circular(10)
                           ),
@@ -115,7 +115,7 @@ class LoginPage extends StatelessWidget {
                             child: FlatButton(
                               onPressed: () {},
                               child: Text("Login",
-                              style: TextStyle(color: Colors.white, fontSize: 20)),
+                              style: TextStyle(color: Colors.black, fontSize: 20)),
                             ),
                           )
                         ],
@@ -129,7 +129,7 @@ class LoginPage extends StatelessWidget {
                 child: Container(
                   height: 60,
                   decoration: BoxDecoration(
-                    color: Colors.black,
+                    color: Colors.white54,
                     borderRadius: BorderRadius.all(
                       Radius.circular(10)
                     )
@@ -141,7 +141,7 @@ class LoginPage extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           child:  Text("Register!",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: Colors.black, fontSize: 20),
                         ),
                         ),
                         Container(

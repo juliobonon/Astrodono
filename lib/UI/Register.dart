@@ -133,7 +133,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     )
                   ],
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 40),
                 Container(
                  decoration: BoxDecoration(
                    color: Colors.white,
