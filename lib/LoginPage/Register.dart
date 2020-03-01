@@ -99,7 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   children: <Widget>[
                     Container(
-                      height: 40,
+                      height: 50,
                       width: 70,
                       decoration: BoxDecoration(
                         color: Colors.white,
