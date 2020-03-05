@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_astronomy/Content/planet.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Container(
         padding: EdgeInsets.only(
-          top: 10,
+          top: 20,
           left: 10,
           right: 10,
         ),
@@ -26,37 +27,54 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: <Widget>[
               Container(
-                height: 350,
+                child: Text("Earth",
+                style: TextStyle(color: Colors.white, fontSize: 30),
+                ),
+              ),
+              SizedBox(height: 30,),
+              Container(
+                height: 300,
                 child: Container(
-                  height: 200,
-                  width: 300,
+                  height: 150,
+                  width: 250,
                   child: Image.asset('imgs/internet.png'),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black,
                     borderRadius: BorderRadius.circular(10)),
-                height: 230,
+                height: 200,
                 padding: EdgeInsets.all(20),
                 child: Column(
                   children: <Widget>[
-                    Text("Our planet - Earth!",
-                    style: TextStyle(fontSize: 40.0, color: Colors.black),
-                    textAlign: TextAlign.center,
-                    ),
                     SizedBox(height: 50),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         RaisedButton(
+                          color: Colors.white,
+                          child: Text("Get Data!",
+                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          textAlign: TextAlign.center,
+                          ),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0)),
-                          onPressed: () {},
+                              borderRadius: BorderRadius.circular(10.0)),
+                          onPressed: () {
+                            Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Planeta()));
+                          },
                         ),
                         RaisedButton(
+                           color: Colors.white,
+                          child: Text("Moons!",
+                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          textAlign: TextAlign.center,
+                          ),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0)),
+                              borderRadius: BorderRadius.circular(10.0)),
                           onPressed: () {},
                         ),
                       ],
