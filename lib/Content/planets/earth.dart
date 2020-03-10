@@ -62,7 +62,9 @@ class _EarthPlanetState extends State<EarthPlanet> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Planeta()));
+                                  builder: (context) => Planeta(),
+                                  ),
+                                  );
                         },
                       ),
                       RaisedButton(

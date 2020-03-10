@@ -16,6 +16,30 @@ class _HomePageState extends State<HomePage> {
           title: Text("Planets"),
           centerTitle: true,
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset('imgs/global.png',
+              width: 30,
+              ),
+              title: Text('Planets')
+            ),
+
+             BottomNavigationBarItem(
+              icon: Image.asset('imgs/nuclear.png',
+              width: 30,
+              ),
+              title: Text('Physics for dummies')
+            ),
+
+             BottomNavigationBarItem(
+              icon: Image.asset('imgs/heart.png',
+              width: 30,
+              ),
+              title: Text('Suport us!')
+            ),
+          ],
+        ),
         body: CarouselSlider(
           height: 1000,
           items: <Widget>[
@@ -23,6 +47,7 @@ class _HomePageState extends State<HomePage> {
             MarsPlanet(),
 
           ],
-        ));
+        ),
+        );
   }
 }

@@ -46,8 +46,11 @@ class Planeta extends StatefulWidget {
 }
 
 class _PlanetaState extends State<Planeta> {
+
   Future<Album> futureAlbum;
+
   @override
+  
   void initState() {
     super.initState();
     futureAlbum = fetchAlbum();
