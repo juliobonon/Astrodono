@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_country_picker: ^0.1.6
   http: ^0.12.0+4
+  carousel_slider: 
 
 dev_dependencies:
   flutter_test:
