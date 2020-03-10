@@ -1,0 +1,4 @@
+#Tue Mar 10 09:05:03 BRT 2020
+base.0=/home/luan/Astrodono/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
