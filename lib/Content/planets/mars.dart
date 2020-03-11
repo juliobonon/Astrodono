@@ -1,4 +1,4 @@
-import 'package:easy_astronomy/Content/planets/planet.dart';
+import 'package:easy_astronomy/Content/planets/marsInfo.dart';
 import 'package:flutter/material.dart';
 
 class MarsPlanet extends StatefulWidget {
@@ -31,7 +31,7 @@ class _MarsPlanetState extends State<MarsPlanet> {
               height: 30,
             ),
             Container(
-              height: 300,
+              height: 250,
               child: Container(
                 height: 150,
                 width: 200,
@@ -49,7 +49,10 @@ class _MarsPlanetState extends State<MarsPlanet> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      RaisedButton(
+                        ButtonTheme(
+                        minWidth: 110,
+                        child: RaisedButton(
+                          
                         color: Colors.white,
                         child: Text(
                           "Get Data!",
@@ -65,7 +68,10 @@ class _MarsPlanetState extends State<MarsPlanet> {
                                   builder: (context) => Planeta()));
                         },
                       ),
-                      RaisedButton(
+                      ),
+                      ButtonTheme(
+                        minWidth: 110.0,
+                        child: RaisedButton(
                         color: Colors.white,
                         child: Text(
                           "Moons!",
@@ -75,6 +81,7 @@ class _MarsPlanetState extends State<MarsPlanet> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
                         onPressed: () {},
+                      ),
                       ),
                     ],
                   ),

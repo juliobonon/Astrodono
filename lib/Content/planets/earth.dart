@@ -1,4 +1,4 @@
-import 'package:easy_astronomy/Content/planets/planet.dart';
+import 'package:easy_astronomy/Content/planets/earthInfo.dart';
 import 'package:flutter/material.dart';
 
 class EarthPlanet extends StatefulWidget {
@@ -20,6 +20,7 @@ class _EarthPlanetState extends State<EarthPlanet> {
       ),
       child: Container(
         child: Column(
+          
           children: <Widget>[
             Container(
               child: Text(
@@ -31,7 +32,7 @@ class _EarthPlanetState extends State<EarthPlanet> {
               height: 30,
             ),
             Container(
-              height: 300,
+              height: 250,
               child: Container(
                 height: 150,
                 width: 200,
@@ -49,7 +50,10 @@ class _EarthPlanetState extends State<EarthPlanet> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      RaisedButton(
+                      ButtonTheme(
+                        minWidth: 110,
+                        child: RaisedButton(
+                          
                         color: Colors.white,
                         child: Text(
                           "Get Data!",
@@ -62,12 +66,13 @@ class _EarthPlanetState extends State<EarthPlanet> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Planeta(),
-                                  ),
-                                  );
+                                  builder: (context) => Planeta()));
                         },
                       ),
-                      RaisedButton(
+                      ),
+                      ButtonTheme(
+                        minWidth: 110.0,
+                        child: RaisedButton(
                         color: Colors.white,
                         child: Text(
                           "Moons!",
@@ -78,6 +83,7 @@ class _EarthPlanetState extends State<EarthPlanet> {
                             borderRadius: BorderRadius.circular(10.0)),
                         onPressed: () {},
                       ),
+                      )
                     ],
                   ),
                 ],
