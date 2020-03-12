@@ -3,39 +3,39 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<Mars> fetchAlbum() async {
+Future<Album> fetchAlbum() async {
   final response =
-      await http.get('https://api.le-systeme-solaire.net/rest/bodies/mars');
+      await http.get('https://api.le-systeme-solaire.net/rest/bodies/jupiter');
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Mars.fromJson(json.decode(response.body));
+    return Album.fromJson(json.decode(response.body));
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load album');
   }
 }
 
-class Mars {
+class Album {
   String englishName;
-  double sideralOrbit;
+  bool isPlanet;
   double gravity;
-  String discoveryBy;
+  double sideralOrbit;
   double density;
 
-  Mars(
+  Album(
       {this.englishName,
-      this.sideralOrbit,
+      this.isPlanet,
       this.gravity,
-      this.discoveryBy,
+      this.sideralOrbit,
       this.density});
 
-  factory Mars.fromJson(Map<String, dynamic> json) {
-    return Mars(
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
         englishName: json['englishName'],
-        sideralOrbit: json['sideralOrbit'],
+        isPlanet: json['isPlanet'],
         gravity: json['gravity'],
-        discoveryBy: json['discoveredBy'],
+        sideralOrbit: json['sideralOrbit'],
         density: json['density']);
   }
 }
@@ -46,23 +46,23 @@ class Planeta extends StatefulWidget {
 }
 
 class _PlanetaState extends State<Planeta> {
-  Future<Mars> futureMars;
+  Future<Album> futureAlbum;
   @override
   void initState() {
     super.initState();
-    futureMars = fetchAlbum();
+    futureAlbum = fetchAlbum();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mars'),
+        title: Text('Jupiter'),
         centerTitle: true,
       ),
       body: Center(
-        child: FutureBuilder<Mars>(
-            future: futureMars,
+        child: FutureBuilder<Album>(
+            future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Container(
@@ -84,7 +84,7 @@ class _PlanetaState extends State<Planeta> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Text(
-                              "The gravity on Mars is:",
+                              "The gravity on Jupiter is:",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -112,7 +112,7 @@ class _PlanetaState extends State<Planeta> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Text(
-                              "The density on Mars is:",
+                              "The density on Jupiter is:",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -129,7 +129,7 @@ class _PlanetaState extends State<Planeta> {
                         ),
                       ),
                       SizedBox(height: 10),
-                      Container(
+                       Container(
                         width: 100,
                         height: 100,
                         decoration: BoxDecoration(
@@ -140,7 +140,7 @@ class _PlanetaState extends State<Planeta> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Text(
-                              "Mars's sideral orbit:",
+                              "The density on Jupiter is:",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -156,7 +156,7 @@ class _PlanetaState extends State<Planeta> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 10),
+                     
                     ],
                   ),
                 );

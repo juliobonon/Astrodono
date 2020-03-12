@@ -1,13 +1,12 @@
-import 'package:easy_astronomy/Content/planets/marsInfo.dart';
-import 'package:easy_astronomy/Content/planets/weightMars.dart';
+import 'package:easy_astronomy/Content/planets/jupiterInfo.dart';
 import 'package:flutter/material.dart';
 
-class MarsPlanet extends StatefulWidget {
+class JupiterPlanet extends StatefulWidget {
   @override
-  _MarsPlanetState createState() => _MarsPlanetState();
+  _JupiterPlanetState createState() => _JupiterPlanetState();
 }
 
-class _MarsPlanetState extends State<MarsPlanet> {
+class _JupiterPlanetState extends State<JupiterPlanet> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +23,7 @@ class _MarsPlanetState extends State<MarsPlanet> {
           children: <Widget>[
             Container(
               child: Text(
-                "Mars",
+                "Jupiter",
                 style: TextStyle(color: Colors.white, fontSize: 30),
               ),
             ),
@@ -36,7 +35,7 @@ class _MarsPlanetState extends State<MarsPlanet> {
               child: Container(
                 height: 150,
                 width: 200,
-                child: Image.asset('imgs/mars.png'),
+                child: Image.asset('imgs/jupiter.png'),
               ),
             ),
             Container(
@@ -62,11 +61,14 @@ class _MarsPlanetState extends State<MarsPlanet> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
                           onPressed: () {
+                            
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
+                              context,
+
+                            MaterialPageRoute(
                                     builder: (context) => Planeta()));
-                          },
+                          }
+                          
                         ),
                       ),
                       ButtonTheme(
@@ -79,28 +81,25 @@ class _MarsPlanetState extends State<MarsPlanet> {
                             textAlign: TextAlign.center,
                           ),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
+                              borderRadius: BorderRadius.circular(10.0),
+                              ),
                           onPressed: () {},
                         ),
                       ),
                     ],
                   ),
+                 
                   SizedBox(height: 10),
-                         ButtonTheme(
+                 ButtonTheme(
                    minWidth: 240,
                    height: 50,
                    child: RaisedButton(
                      color: Colors.white,
                      child: Text(
-                      "Discover your Martian weight",
-                      style: TextStyle(color: Colors.red, fontSize: 16),
+                      "Asteroid Belt",
+                      style: TextStyle(color: Colors.orange, fontSize: 20),
                       ),
-                     onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MarsWeight()));
-                          },
+                     onPressed: (){},
                      shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                               ),
