@@ -77,7 +77,7 @@ class _PlanetaState extends State<Planeta> {
                         width: 100,
                         height: 100,
                         decoration: BoxDecoration(
-                          color: Colors.purple,
+                          color: Colors.black87,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
@@ -105,7 +105,7 @@ class _PlanetaState extends State<Planeta> {
                         width: 100,
                         height: 100,
                         decoration: BoxDecoration(
-                          color: Colors.purple,
+                          color: Colors.black87,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Row(
