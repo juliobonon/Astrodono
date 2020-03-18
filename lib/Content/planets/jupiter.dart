@@ -9,16 +9,15 @@ class JupiterPlanet extends StatefulWidget {
 class _JupiterPlanetState extends State<JupiterPlanet> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 20,
-        left: 10,
-        right: 10,
-      ),
-      decoration: BoxDecoration(
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.only(
+          top:40,
+          left:40,
+          right:40,
+        ),
         color: Colors.black,
-      ),
-      child: Container(
+        width: 1000,
         child: Column(
           children: <Widget>[
             Container(
@@ -30,74 +29,49 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
             SizedBox(
               height: 30,
             ),
-            Container(
-              height: 250,
-              child: Container(
-                height: 150,
+            
+      Container(
+                child: Image.asset('imgs/jupiter.png',
+                height: 200,
                 width: 200,
-                child: Image.asset('imgs/jupiter.png'),
+                ),
               ),
-            ),
+            SizedBox(height: 60),
             Container(
-              decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(10)),
-              height: 200,
-              padding: EdgeInsets.all(20),
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      ButtonTheme(
-                        minWidth: 110,
-                        child: RaisedButton(
-                          color: Colors.white,
-                          child: Text(
-                            "Get Data!",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
-                            textAlign: TextAlign.center,
-                          ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          onPressed: () {
-                            
-                            Navigator.push(
-                              context,
-
-                            MaterialPageRoute(
-                                    builder: (context) => Planeta()));
-                          }
-                          
-                        ),
+                  ButtonTheme(
+                    minWidth: 200,
+                    height: 50,
+                    child: RaisedButton(
+                      color: Colors.white,
+                      child: Text(
+                        "Get Data!",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        textAlign: TextAlign.center,
                       ),
-                      ButtonTheme(
-                        minWidth: 110.0,
-                        child: RaisedButton(
-                          color: Colors.white,
-                          child: Text(
-                            "Moons!",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
-                            textAlign: TextAlign.center,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
                           ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              ),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Planeta()),
+                        );
+                      },
+                    ),
                   ),
+
                  
                   SizedBox(height: 10),
                  ButtonTheme(
-                   minWidth: 240,
+                   minWidth: 200,
                    height: 50,
                    child: RaisedButton(
                      color: Colors.white,
                      child: Text(
                       "Asteroid Belt",
-                      style: TextStyle(color: Colors.orange, fontSize: 20),
+                      style: TextStyle(color: Colors.orange, fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                      onPressed: (){},
                      shape: RoundedRectangleBorder(

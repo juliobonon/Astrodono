@@ -1,6 +1,6 @@
 import 'package:easy_astronomy/Content/planets/marsInfo.dart';
-import 'package:easy_astronomy/Content/planets/weightMars.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_astronomy/Content/planets/weightMars.dart';
 
 class MarsPlanet extends StatefulWidget {
   @override
@@ -10,16 +10,15 @@ class MarsPlanet extends StatefulWidget {
 class _MarsPlanetState extends State<MarsPlanet> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 20,
-        left: 10,
-        right: 10,
-      ),
-      decoration: BoxDecoration(
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.only(
+          top: 40,
+          left: 40,
+          right: 40,
+        ),
+        width: 1000,
         color: Colors.black,
-      ),
-      child: Container(
         child: Column(
           children: <Widget>[
             Container(
@@ -32,83 +31,63 @@ class _MarsPlanetState extends State<MarsPlanet> {
               height: 30,
             ),
             Container(
-              height: 250,
-              child: Container(
-                height: 150,
-                width: 200,
-                child: Image.asset('imgs/mars.png'),
+              child: Image.asset('imgs/mars.png',
+              height: 200,
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.black, borderRadius: BorderRadius.circular(10)),
-              height: 200,
-              padding: EdgeInsets.all(20),
-              child: Column(
+            SizedBox(
+              height: 60,
+            ),
+            Column(
                 children: <Widget>[
-                  SizedBox(height: 30),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      ButtonTheme(
-                        minWidth: 110,
-                        child: RaisedButton(
-                          color: Colors.white,
-                          child: Text(
-                            "Get Data!",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
-                            textAlign: TextAlign.center,
-                          ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Planeta()));
-                          },
-                        ),
+                   ButtonTheme(
+                    minWidth: 200,
+                    height: 50,
+                    child: RaisedButton(
+                      color: Colors.white,
+                      child: Text(
+                        "Get Data!",
+                        style: TextStyle(color: Colors.black, fontSize: 20,),
+                        textAlign: TextAlign.center,
                       ),
-                      ButtonTheme(
-                        minWidth: 110.0,
-                        child: RaisedButton(
-                          color: Colors.white,
-                          child: Text(
-                            "Moons!",
-                            style: TextStyle(color: Colors.black, fontSize: 20),
-                            textAlign: TextAlign.center,
-                          ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0)),
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Planeta()),
+                        );
+                      },
+                    ),
                   ),
+             
+
                   SizedBox(height: 10),
-                         ButtonTheme(
-                   minWidth: 240,
-                   height: 50,
-                   child: RaisedButton(
-                     color: Colors.white,
-                     child: Text(
-                      "Discover your Martian weight",
-                      style: TextStyle(color: Colors.red, fontSize: 16),
+                  ButtonTheme(
+                    minWidth: 200,
+                    height: 50,
+                    child: RaisedButton(
+                      color: Colors.white,
+                      child: Text(
+                        "Martin Weight",
+                        style: TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold ),
                       ),
-                     onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MarsWeight()));
-                          },
-                     shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              ),
-                   ),
-                 )
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MarsWeight(),
+                          ),
+                        );
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  )
                 ],
               ),
-            )
+            
           ],
         ),
       ),

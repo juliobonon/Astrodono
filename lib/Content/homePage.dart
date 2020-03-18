@@ -56,8 +56,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: CarouselSlider(
-        height: 1000,
+        height: 700,
         items: <Widget>[
+          
           EarthPlanet(),
           MarsPlanet(),
           JupiterPlanet(),

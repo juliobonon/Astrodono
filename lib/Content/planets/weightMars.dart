@@ -63,8 +63,8 @@ class _MarsWeightState extends State<MarsWeight> {
               color: Colors.white,
             ),
             decoration: InputDecoration(
+              
               labelStyle: TextStyle(
-                
               ),
               
               contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),

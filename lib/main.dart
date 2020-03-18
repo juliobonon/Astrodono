@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        fontFamily: 'Montserrat',
       ),
       home: LoginPage(),
     );
