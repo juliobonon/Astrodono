@@ -17,25 +17,25 @@ Future<Album> fetchAlbum() async {
 }
 
 class Album {
-  String englishName;
+  double sideralOrbit;
   bool isPlanet;
   double gravity;
-  double sideralOrbit;
+  String discoveryBy;
   double density;
 
   Album(
-      {this.englishName,
+      {this.sideralOrbit,
       this.isPlanet,
       this.gravity,
-      this.sideralOrbit,
+      this.discoveryBy,
       this.density});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-        englishName: json['englishName'],
+        sideralOrbit: json['sideralOrbit'],
         isPlanet: json['isPlanet'],
         gravity: json['gravity'],
-        sideralOrbit: json['sideralOrbit'],
+        discoveryBy: json['discoveredBy'],
         density: json['density']);
   }
 }
@@ -57,7 +57,7 @@ class _PlanetaState extends State<Planeta> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Jupiter'),
+        title: Text('Mars'),
         centerTitle: true,
       ),
       body: Center(
@@ -65,99 +65,212 @@ class _PlanetaState extends State<Planeta> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Container(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    left: 10,
-                    right: 10,
-                  ),
-                  child: ListView(
+                return Scaffold(
+          
+                  body: Container(
+                    padding: EdgeInsets.only(
+                    bottom:10,
+                    right:10,
+                    ),
+                    color: Colors.black,
+                    child: Stack (
+                    
                     children: <Widget>[
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "The gravity on Jupiter is:",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              snapshot.data.gravity.toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
+                      
+                      Positioned(
+                        top: 1,
+                        right:150,
+                        bottom: 10,
+                        child: Container(
+                          child: Image.asset('imgs/jupiter.png',
+                          ),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "The density on Jupiter is:",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
+                      
+                 
+                        
+
+                    Positioned(
+                       top: 30,
+                       left: 170,
+                       height: 200,
+                       width: 150,
+
+                       child: Stack(
+                         alignment: Alignment.center,
+                         children: <Widget>[
+
+                           Positioned(
+                             top: 40,
+                             child: Container(
+                               
+                              width: 400,
+                             height: 150,
+                             decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               color: Colors.white,
+                            
+                             ),
+                             padding: EdgeInsets.only(
+                               top:20,
+                             ),
+                             child: Text("Density",
+                             textAlign: TextAlign.center,
+                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                             ),
-                            Text(
-                              snapshot.data.density.toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
+
+
+                           ),
+                           ),
+
+                          Positioned(
+                            bottom: 15,
+                            child:  Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.orange[400],
                               ),
+                             padding: EdgeInsets.only(
+                               top: 20,
+                             ),
+                             width: 310,
+                             height: 80,
+                             child: Text(snapshot.data.density.toStringAsPrecision(3),
+                             textAlign: TextAlign.center,
+                             style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                             ),
+                           ),
+                          ),
+                            
+                          
+                         ],
+                       ),
+                     ),
+
+
+
+
+                     Positioned(
+                       top: 205,
+                       left: 170,
+                       height: 200,
+                       width: 150,
+
+                       child: Stack(
+                         alignment: Alignment.center,
+                         children: <Widget>[
+
+                           Positioned(
+                             top: 40,
+                             child: Container(
+                               
+                              width: 400,
+                             height: 150,
+                             decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               color: Colors.white,
+                            
+                             ),
+                             padding: EdgeInsets.only(
+                               top:20,
+                             ),
+                             child: Text("Gravity",
+                             textAlign: TextAlign.center,
+                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                             ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                       Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "The density on Jupiter is:",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
+
+
+                           ),
+                           ),
+
+                          Positioned(
+                            bottom: 15,
+                            child:  Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.orange[400],
                               ),
+                             padding: EdgeInsets.only(
+                               top: 20,
+                             ),
+                             width: 310,
+                             height: 80,
+                             child: Text(snapshot.data.gravity.toStringAsPrecision(3),
+                             textAlign: TextAlign.center,
+                             style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                             ),
+                           ),
+                          ),
+                            
+                          
+                         ],
+                       ),
+                     ),
+
+
+                     
+                     Positioned(
+                       top: 380,
+                       left: 170,
+                       height: 200,
+                       width: 150,
+
+                       child: Stack(
+                         alignment: Alignment.center,
+                         children: <Widget>[
+
+                           Positioned(
+                             top: 40,
+                             child: Container(
+                               
+                              width: 400,
+                             height: 150,
+                             decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               color: Colors.white,
+                            
+                             ),
+                             padding: EdgeInsets.only(
+                               top:20,
+                             ),
+                             child: Text("Orbit",
+                             textAlign: TextAlign.center,
+                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                             ),
-                            Text(
-                              snapshot.data.sideralOrbit.toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
+
+
+                           ),
+                           ),
+
+                          Positioned(
+                            bottom: 15,
+                            child:  Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.orange[400],
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
+                             padding: EdgeInsets.only(
+                               top: 25,
+                             ),
+                             width: 310,
+                             height: 80,
+                             child: Text(snapshot.data.sideralOrbit.toStringAsPrecision(4),
+                             textAlign: TextAlign.center,
+                             style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+                             ),
+                           ),
+                          ),
+                            
+                          
+                         ],
+                       ),
+                     ),
+                     
+
+                     
                      
                     ],
+                  ),
                   ),
                 );
               } else if (snapshot.hasError) {

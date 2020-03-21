@@ -12,7 +12,7 @@ class _EarthPlanetState extends State<EarthPlanet> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(
-          top:40,
+          top:80,
           left:40,
           right:40,
         ),
@@ -32,8 +32,11 @@ class _EarthPlanetState extends State<EarthPlanet> {
              Container(
               child: Image.asset('imgs/internet.png',
               height: 200,
-              ),
+              ),          
             ),
+             SizedBox(
+                height: 60,
+              ),
             Container(
               child: Column(
                 children: <Widget>[

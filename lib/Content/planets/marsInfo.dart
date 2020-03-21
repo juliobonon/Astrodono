@@ -68,6 +68,10 @@ class _PlanetaState extends State<Planeta> {
                 return Scaffold(
           
                   body: Container(
+                    padding: EdgeInsets.only(
+                    bottom:10,
+                    right:10,
+                    ),
                     color: Colors.black,
                     child: Stack (
                     
@@ -75,7 +79,7 @@ class _PlanetaState extends State<Planeta> {
                       
                       Positioned(
                         top: 1,
-                        right:220,
+                        right:150,
                         bottom: 10,
                         child: Container(
                           child: Image.asset('imgs/mars.png',
@@ -87,7 +91,8 @@ class _PlanetaState extends State<Planeta> {
                         
 
                     Positioned(
-                       left: 220,
+                       top: 30,
+                       left: 170,
                        height: 200,
                        width: 150,
 
@@ -123,7 +128,7 @@ class _PlanetaState extends State<Planeta> {
                             child:  Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.red[600],
+                                color: Colors.red[400],
                               ),
                              padding: EdgeInsets.only(
                                top: 20,
@@ -146,8 +151,8 @@ class _PlanetaState extends State<Planeta> {
 
 
                      Positioned(
-                       top: 175,
-                       left: 220,
+                       top: 205,
+                       left: 170,
                        height: 200,
                        width: 150,
 
@@ -183,7 +188,7 @@ class _PlanetaState extends State<Planeta> {
                             child:  Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.red[600],
+                                color: Colors.red[400],
                               ),
                              padding: EdgeInsets.only(
                                top: 20,
@@ -205,8 +210,8 @@ class _PlanetaState extends State<Planeta> {
 
                      
                      Positioned(
-                       top: 350,
-                       left: 220,
+                       top: 380,
+                       left: 170,
                        height: 200,
                        width: 150,
 
@@ -242,7 +247,7 @@ class _PlanetaState extends State<Planeta> {
                             child:  Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.red[600],
+                                color: Colors.red[400],
                               ),
                              padding: EdgeInsets.only(
                                top: 25,
