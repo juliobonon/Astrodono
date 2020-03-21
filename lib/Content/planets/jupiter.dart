@@ -20,6 +20,7 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
         width: 1000,
         child: Column(
           children: <Widget>[
+            
             Container(
               child: Text(
                 "Jupiter",
@@ -30,16 +31,18 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
               height: 30,
             ),
             
-      Container(
-                child: Image.asset('imgs/jupiter.png',
-                height: 200,
-                width: 200,
-                ),
+            Container(
+              child: Image.asset('imgs/jupiter.png',
+              height: 200,
+              width: 200,
               ),
+            ),
+
             SizedBox(height: 60),
             Container(
               child: Column(
                 children: <Widget>[
+
                   ButtonTheme(
                     minWidth: 200,
                     height: 50,
@@ -63,7 +66,8 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
                   ),
 
                  
-                  SizedBox(height: 10),
+                SizedBox(height: 10),
+
                  ButtonTheme(
                    minWidth: 200,
                    height: 50,
@@ -77,6 +81,7 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
                      shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
                               ),
+
                    ),
                  )
                 ],

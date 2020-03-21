@@ -17,14 +17,14 @@ Future<Album> fetchAlbum() async {
 }
 
 class Album {
-  String englishName;
+  double sideralOrbit;
   bool isPlanet;
   double gravity;
   String discoveryBy;
   double density;
 
   Album(
-      {this.englishName,
+      {this.sideralOrbit,
       this.isPlanet,
       this.gravity,
       this.discoveryBy,
@@ -32,7 +32,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-        englishName: json['englishName'],
+        sideralOrbit: json['sideralOrbit'],
         isPlanet: json['isPlanet'],
         gravity: json['gravity'],
         discoveryBy: json['discoveredBy'],
@@ -65,71 +65,207 @@ class _PlanetaState extends State<Planeta> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Container(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    left: 10,
-                    right: 10,
-                  ),
-                  child: ListView(
+                return Scaffold(
+          
+                  body: Container(
+                    color: Colors.black,
+                    child: Stack (
+                    
                     children: <Widget>[
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "The gravity on Earth is:",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              snapshot.data.gravity.toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
+                      
+                      Positioned(
+                        top: 1,
+                        right:220,
+                        bottom: 10,
+                        child: Container(
+                          child: Image.asset('imgs/internet.png',
+                          ),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black87,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Text(
-                              "The density on Earth is:",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
+                      
+                 
+                        
+
+                    Positioned(
+                       left: 220,
+                       height: 200,
+                       width: 150,
+
+                       child: Stack(
+                         alignment: Alignment.center,
+                         children: <Widget>[
+
+                           Positioned(
+                             top: 40,
+                             child: Container(
+                               
+                              width: 400,
+                             height: 150,
+                             decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               color: Colors.white,
+                            
+                             ),
+                             padding: EdgeInsets.only(
+                               top:20,
+                             ),
+                             child: Text("Density",
+                             textAlign: TextAlign.center,
+                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                             ),
-                            Text(
-                              snapshot.data.density.toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
+
+
+                           ),
+                           ),
+
+                          Positioned(
+                            bottom: 15,
+                            child:  Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.blue[900],
                               ),
+                             padding: EdgeInsets.only(
+                               top: 20,
+                             ),
+                             width: 310,
+                             height: 80,
+                             child: Text(snapshot.data.density.toStringAsPrecision(3),
+                             textAlign: TextAlign.center,
+                             style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                             ),
+                           ),
+                          ),
+                            
+                          
+                         ],
+                       ),
+                     ),
+
+
+
+
+                     Positioned(
+                       top: 175,
+                       left: 220,
+                       height: 200,
+                       width: 150,
+
+                       child: Stack(
+                         alignment: Alignment.center,
+                         children: <Widget>[
+
+                           Positioned(
+                             top: 40,
+                             child: Container(
+                               
+                              width: 400,
+                             height: 150,
+                             decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               color: Colors.white,
+                            
+                             ),
+                             padding: EdgeInsets.only(
+                               top:20,
+                             ),
+                             child: Text("Gravity",
+                             textAlign: TextAlign.center,
+                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                             ),
-                          ],
-                        ),
-                      ),
+
+
+                           ),
+                           ),
+
+                          Positioned(
+                            bottom: 15,
+                            child:  Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.blue[900],
+                              ),
+                             padding: EdgeInsets.only(
+                               top: 20,
+                             ),
+                             width: 310,
+                             height: 80,
+                             child: Text(snapshot.data.gravity.toString(),
+                             textAlign: TextAlign.center,
+                             style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                             ),
+                           ),
+                          ),
+                            
+                          
+                         ],
+                       ),
+                     ),
+
+
+                     
+                     Positioned(
+                       top: 350,
+                       left: 220,
+                       height: 200,
+                       width: 150,
+
+                       child: Stack(
+                         alignment: Alignment.center,
+                         children: <Widget>[
+
+                           Positioned(
+                             top: 40,
+                             child: Container(
+                               
+                              width: 400,
+                             height: 150,
+                             decoration: BoxDecoration(
+                               shape: BoxShape.circle,
+                               color: Colors.white,
+                            
+                             ),
+                             padding: EdgeInsets.only(
+                               top:20,
+                             ),
+                             child: Text("Orbit",
+                             textAlign: TextAlign.center,
+                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+                            ),
+
+
+                           ),
+                           ),
+
+                          Positioned(
+                            bottom: 15,
+                            child:  Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.blue[900],
+                              ),
+                             padding: EdgeInsets.only(
+                               top: 25,
+                             ),
+                             width: 310,
+                             height: 80,
+                             child: Text(snapshot.data.sideralOrbit.toStringAsPrecision(4),
+                             textAlign: TextAlign.center,
+                             style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+                             ),
+                           ),
+                          ),
+                            
+                          
+                         ],
+                       ),
+                     ),
+                     
+
+                     
                      
                     ],
+                  ),
                   ),
                 );
               } else if (snapshot.hasError) {
