@@ -1,284 +1,143 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 
-Future<Album> fetchAlbum() async {
-  final response =
-      await http.get('https://api.le-systeme-solaire.net/rest/bodies/earth');
 
-  if (response.statusCode == 200) {
-    // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(json.decode(response.body));
-  } else {
-    // If the server did not return a 200 OK response, then throw an exception.
-    throw Exception('Failed to load album');
-  }
-}
 
-class Album {
-  double sideralOrbit;
-  bool isPlanet;
-  double gravity;
-  String discoveryBy;
-  double density;
-
-  Album(
-      {this.sideralOrbit,
-      this.isPlanet,
-      this.gravity,
-      this.discoveryBy,
-      this.density});
-
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-        sideralOrbit: json['sideralOrbit'],
-        isPlanet: json['isPlanet'],
-        gravity: json['gravity'],
-        discoveryBy: json['discoveredBy'],
-        density: json['density']);
-  }
-}
-
-class Planeta extends StatefulWidget {
+class Block extends StatefulWidget {
   @override
-  _PlanetaState createState() => _PlanetaState();
+  _BlockState createState() => _BlockState();
 }
 
-class _PlanetaState extends State<Planeta> {
-  Future<Album> futureAlbum;
+class _BlockState extends State<Block> {
   @override
-  void initState() {
-    super.initState();
-    futureAlbum = fetchAlbum();
-  }
+  Widget build(BuildContext context) {
+    return Container(
 
+      width: 60,
+      height: 250,
+
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Positioned(
+            
+            child:  Image.asset('imgs/earthSurface.jpg',
+            width: 600,
+            fit: BoxFit.fill,
+            
+
+            ),
+          ),
+
+          Positioned(
+           top: 182,
+           left: 330,
+            child: ButtonTheme(
+              minWidth: 50,
+              height: 50,
+              child: FloatingActionButton(
+                backgroundColor: Colors.black,
+                child: Text("Info"),
+                onPressed: (){},
+              ),
+            ),
+          )
+         
+        ],
+      )
+
+
+
+    );
+  }
+}
+
+class EarthText extends StatefulWidget {
+  @override
+  _EarthTextState createState() => _EarthTextState();
+}
+
+class _EarthTextState extends State<EarthText> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        left:20,
+        right:20,
+      ),
+
+      width: 100,
+      height: 300,
+
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
+
+      child: Stack(
+        children: <Widget>[
+
+         Text("Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating and other evidence, Earth formed over 4.5 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, which is Earth's only natural satellite. Earth orbits around the Sun in 365.256 solar days, a period known as an Earth sidereal year. During this time, Earth rotates about its axis 366.256 times, that is, a sidereal year has 366.256 sidereal days",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold, fontSize: 15),
+           ),
+
+         Positioned(
+           top: 250,
+           left: 70,
+           child: Text("Gravity 9.8",
+           style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+           ),
+         ),
+
+          Positioned(
+           top: 250,
+           left: 200,
+           child: Text("Density 5.51",
+           style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+           ),
+         ),
+
+        ],
+
+      ),
+    );
+  }
+}
+
+
+class EarthInfo extends StatefulWidget {
+  @override
+  _EarthInfoState createState() => _EarthInfoState();
+}
+
+class _EarthInfoState extends State<EarthInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Earth'),
-        centerTitle: true,
+      body: Container(
+        color: Colors.white,
+        padding: EdgeInsets.only(
+          top: 10,
+          bottom: 10,
+        ),
+
+        child: ListView(
+          children: <Widget>[
+
+            Block(),
+            
+            SizedBox(height: 20),
+
+            EarthText()
+
+
+
+
+          ],
+        ),
+
       ),
-      body: Center(
-        child: FutureBuilder<Album>(
-            future: futureAlbum,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return Scaffold(
-          
-                  body: Container(
-                    padding: EdgeInsets.only(
-                    bottom:10,
-                    right:10,
-                    ),
-                    color: Colors.black,
-                    child: Stack (
-                    
-                    children: <Widget>[
-                      
-                      Positioned(
-                        top: 1,
-                        right:150,
-                        bottom: 10,
-                        child: Container(
-                          child: Image.asset('imgs/internet.png',
-                          ),
-                        ),
-                      ),
-                      
-                 
-                        
-
-                    Positioned(
-                       top: 30,
-                       left: 170,
-                       height: 200,
-                       width: 150,
-
-                       child: Stack(
-                         alignment: Alignment.center,
-                         children: <Widget>[
-
-                           Positioned(
-                             top: 40,
-                             child: Container(
-                               
-                              width: 400,
-                             height: 150,
-                             decoration: BoxDecoration(
-                               shape: BoxShape.circle,
-                               color: Colors.white,
-                            
-                             ),
-                             padding: EdgeInsets.only(
-                               top:20,
-                             ),
-                             child: Text("Density",
-                             textAlign: TextAlign.center,
-                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-                            ),
-
-
-                           ),
-                           ),
-
-                          Positioned(
-                            bottom: 15,
-                            child:  Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.teal[600],
-                              ),
-                             padding: EdgeInsets.only(
-                               top: 20,
-                             ),
-                             width: 310,
-                             height: 80,
-                             child: Text(snapshot.data.density.toStringAsPrecision(3),
-                             textAlign: TextAlign.center,
-                             style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
-                             ),
-                           ),
-                          ),
-                            
-                          
-                         ],
-                       ),
-                     ),
-
-
-
-
-                     Positioned(
-                       top: 205,
-                       left: 170,
-                       height: 200,
-                       width: 150,
-
-                       child: Stack(
-                         alignment: Alignment.center,
-                         children: <Widget>[
-
-                           Positioned(
-                             top: 40,
-                             child: Container(
-                               
-                              width: 400,
-                             height: 150,
-                             decoration: BoxDecoration(
-                               shape: BoxShape.circle,
-                               color: Colors.white,
-                            
-                             ),
-                             padding: EdgeInsets.only(
-                               top:20,
-                             ),
-                             child: Text("Gravity",
-                             textAlign: TextAlign.center,
-                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-                            ),
-
-
-                           ),
-                           ),
-
-                          Positioned(
-                            bottom: 15,
-                            child:  Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.teal[600],
-                              ),
-                             padding: EdgeInsets.only(
-                               top: 20,
-                             ),
-                             width: 310,
-                             height: 80,
-                             child: Text(snapshot.data.gravity.toString(),
-                             textAlign: TextAlign.center,
-                             style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
-                             ),
-                           ),
-                          ),
-                            
-                          
-                         ],
-                       ),
-                     ),
-
-
-                     
-                     Positioned(
-                       top: 380,
-                       left: 170,
-                       height: 200,
-                       width: 150,
-
-                       child: Stack(
-                         alignment: Alignment.center,
-                         children: <Widget>[
-
-                           Positioned(
-                             top: 40,
-                             child: Container(
-                               
-                              width: 400,
-                             height: 150,
-                             decoration: BoxDecoration(
-                               shape: BoxShape.circle,
-                               color: Colors.white,
-                            
-                             ),
-                             padding: EdgeInsets.only(
-                               top:20,
-                             ),
-                             child: Text("Orbit",
-                             textAlign: TextAlign.center,
-                             style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-                            ),
-
-
-                           ),
-                           ),
-
-                          Positioned(
-                            bottom: 15,
-                            child:  Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.teal[600],
-                              ),
-                             padding: EdgeInsets.only(
-                               top: 25,
-                             ),
-                             width: 310,
-                             height: 80,
-                             child: Text(snapshot.data.sideralOrbit.toStringAsPrecision(4),
-                             textAlign: TextAlign.center,
-                             style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
-                             ),
-                           ),
-                          ),
-                            
-                          
-                         ],
-                       ),
-                     ),
-                     
-
-                     
-                     
-                    ],
-                  ),
-                  ),
-                );
-              } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
-              }
-              return CircularProgressIndicator();
-            }),
-      ),
+      
     );
   }
 }

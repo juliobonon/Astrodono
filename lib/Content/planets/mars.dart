@@ -10,8 +10,8 @@ class MarsPlanet extends StatefulWidget {
 class _MarsPlanetState extends State<MarsPlanet> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
+      child: Container(
         padding: EdgeInsets.only(
           top: 80,
           left: 40,

@@ -9,8 +9,8 @@ class JupiterPlanet extends StatefulWidget {
 class _JupiterPlanetState extends State<JupiterPlanet> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
+      child: Container(
         padding: EdgeInsets.only(
           top:80,
           left:40,
@@ -27,6 +27,7 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
                 style: TextStyle(color: Colors.white, fontSize: 30),
               ),
             ),
+
             SizedBox(
               height: 30,
             ),
@@ -39,6 +40,7 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
             ),
 
             SizedBox(height: 60),
+
             Container(
               child: Column(
                 children: <Widget>[

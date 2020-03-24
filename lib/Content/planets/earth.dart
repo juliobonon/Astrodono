@@ -9,8 +9,8 @@ class EarthPlanet extends StatefulWidget {
 class _EarthPlanetState extends State<EarthPlanet> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
+      child: Container(
         padding: EdgeInsets.only(
           top:80,
           left:40,
@@ -57,7 +57,7 @@ class _EarthPlanetState extends State<EarthPlanet> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Planeta()),
+                          MaterialPageRoute(builder: (context) => EarthInfo()),
                         );
                       },
                     ),
