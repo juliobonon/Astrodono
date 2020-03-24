@@ -55,7 +55,7 @@ class _MarsPlanetState extends State<MarsPlanet> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Planeta()),
+                          MaterialPageRoute(builder: (context) => MarsInfo()),
                         );
                       },
                     ),

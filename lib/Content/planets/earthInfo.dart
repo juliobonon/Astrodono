@@ -1,6 +1,80 @@
 import 'package:flutter/material.dart';
 
+class BottomBlock extends StatefulWidget {
+  @override
+  _BottomBlockState createState() => _BottomBlockState();
+}
 
+class _BottomBlockState extends State<BottomBlock> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+ 
+      width: 200,
+      height: 100,
+     child:Stack(
+       alignment: Alignment.center,
+       children: <Widget>[
+
+          
+        Container(
+          width: 400,
+          height: 70,
+          padding: EdgeInsets.only(
+            top:20,
+          ),
+
+          decoration: BoxDecoration(
+               color: Colors.blue[900],
+               borderRadius: BorderRadius.circular(10)
+          ),
+
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+
+        
+              Column(
+                children: <Widget>[
+                    Text("Gravity 9.8 m/s²",
+                  style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height:5),
+                    Container(
+                      width: 20,
+                      height: 2,
+                      color: Colors.white,
+                    )
+                ],
+                ),
+         
+                Column(
+                    children: <Widget>[
+                        Text("Density 5.51 g/cm³",
+                        style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height:5),
+                        Container(
+                          width: 20,
+                          height: 2,
+                          color: Colors.white,
+                        )
+                    ],
+                  ),
+           
+
+            ],
+          ),
+        )
+
+         
+       ],
+     ),
+     
+    );
+  }
+}
 
 class Block extends StatefulWidget {
   @override
@@ -66,36 +140,29 @@ class _EarthTextState extends State<EarthText> {
       ),
 
       width: 100,
-      height: 300,
-
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-      ),
+      height: 220,
 
       child: Stack(
         children: <Widget>[
 
-         Text("Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating and other evidence, Earth formed over 4.5 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, which is Earth's only natural satellite. Earth orbits around the Sun in 365.256 solar days, a period known as an Earth sidereal year. During this time, Earth rotates about its axis 366.256 times, that is, a sidereal year has 366.256 sidereal days",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold, fontSize: 15),
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+          
+            children: <TextSpan>[
+             TextSpan(text: "    Earth ",
+             style: TextStyle(color: Colors.blue[800], fontSize: 20, fontWeight: FontWeight.bold),
+             
+             ),
+             TextSpan(text:"is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating and other evidence, Earth formed over 4.5 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, which is Earth's only natural satellite. Earth orbits around the Sun in 365.256 solar days, a period known as an Earth sidereal year. During this time, Earth rotates about its axis 366.256 times, that is, a sidereal year has 366.256 sidereal days.",
+             style: TextStyle(color: Colors.black, fontSize: 16)
+             
+           
            ),
+            ]
+          ),
+        ),
 
-         Positioned(
-           top: 250,
-           left: 70,
-           child: Text("Gravity 9.8",
-           style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-           ),
-         ),
-
-          Positioned(
-           top: 250,
-           left: 200,
-           child: Text("Density 5.51",
-           style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-           ),
-         ),
 
         ],
 
@@ -116,19 +183,20 @@ class _EarthInfoState extends State<EarthInfo> {
     return Scaffold(
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.only(
-          top: 10,
-          bottom: 10,
-        ),
-
+     
         child: ListView(
+          
           children: <Widget>[
 
             Block(),
             
-            SizedBox(height: 20),
+            SizedBox(height: 30),
 
-            EarthText()
+            EarthText(),
+            
+            SizedBox(height: 30),
+
+            BottomBlock(),
 
 
 
