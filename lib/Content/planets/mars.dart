@@ -13,7 +13,7 @@ class _MarsPlanetState extends State<MarsPlanet> {
     return Container(
       child: Container(
         padding: EdgeInsets.only(
-          top: 80,
+          top: 50,
           left: 40,
           right: 40,
         ),

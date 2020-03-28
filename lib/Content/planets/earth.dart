@@ -12,11 +12,11 @@ class _EarthPlanetState extends State<EarthPlanet> {
     return Container(
       child: Container(
         padding: EdgeInsets.only(
-          top:80,
+          top:50,
           left:40,
           right:40,
         ),
-        width: 1000,
+        width: 500,
         color: Colors.black,
         child: Column(
           children: <Widget>[
@@ -35,7 +35,7 @@ class _EarthPlanetState extends State<EarthPlanet> {
               ),          
             ),
              SizedBox(
-                height: 60,
+                height: 40,
               ),
             Container(
               child: Column(

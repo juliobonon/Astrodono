@@ -18,7 +18,7 @@ class _BottomBlockState extends State<BottomBlock> {
 
           
         Container(
-          width: 400,
+          width: 350,
           height: 70,
           padding: EdgeInsets.only(
             top:20,
@@ -38,7 +38,7 @@ class _BottomBlockState extends State<BottomBlock> {
               Column(
                 children: <Widget>[
                     Text("Gravity 3.72 m/s²",
-                  style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height:5),
                     Container(
@@ -52,7 +52,7 @@ class _BottomBlockState extends State<BottomBlock> {
                 Column(
                     children: <Widget>[
                         Text("Density 3.93 g/cm³",
-                        style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height:5),
                         Container(
@@ -105,14 +105,16 @@ class _BlockState extends State<Block> {
 
           Positioned(
            top: 182,
-           left: 330,
+           left: 290,
             child: ButtonTheme(
               minWidth: 50,
               height: 50,
               child: FloatingActionButton(
+
                 backgroundColor: Colors.black,
                 child: Text("Info"),
                 onPressed: (){},
+
               ),
             ),
           )
@@ -134,14 +136,12 @@ class EarthText extends StatefulWidget {
 class _EarthTextState extends State<EarthText> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       padding: EdgeInsets.only(
         left:20,
         right:20,
       ),
 
-      width: 100,
-      height: 230,
 
       child: Stack(
         children: <Widget>[

@@ -12,7 +12,7 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
     return Container(
       child: Container(
         padding: EdgeInsets.only(
-          top:80,
+          top:50,
           left:40,
           right:40,
         ),
@@ -61,7 +61,7 @@ class _JupiterPlanetState extends State<JupiterPlanet> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Planeta()),
+                          MaterialPageRoute(builder: (context) => JupiterInfo()),
                         );
                       },
                     ),
